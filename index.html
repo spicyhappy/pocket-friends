@@ -3,6 +3,33 @@
 <head>
 <title>Pocket Friends</title>
 <script>
+// (function() {
+
+//   console.log("working");
+//   var x=document.getElementById("demo");
+
+//    function showPosition(position)
+//      {
+//       console.log("hihi");
+//      x.innerHTML="Latitude: " + position.coords.latitude + 
+//      "<br>Longitude: " + position.coords.longitude; 
+//      }
+
+//  if (navigator.geolocation) {
+
+//       console.log("we have geolocation");
+//     navigator.geolocation.getCurrentPosition(showPosition);
+//       console.log("function returned");
+
+//   }
+
+//   else{
+//     x.innerHTML="Geolocation is not supported by this browser.";
+//   }
+
+
+// })();
+
 var x=document.getElementById("demo");
 function getLocation()
   {
@@ -15,12 +42,17 @@ function getLocation()
 function showPosition(position)
   {
   x.innerHTML="Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude; 
+  "<br>Longitude: " + position.coords.longitude;  
   }
+
+  (function(){getLocation()
+  })();
+
 </script>
 </head>
 <body>
 Geolocation:
+<button onclick="getLocation()">Try It</button>
 <span id="demo"></span>
 </body>
 </html>
