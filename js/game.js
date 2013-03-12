@@ -8,20 +8,41 @@
 $(document).ready(function() {
 
 
-  // Setup the canvas
-  var canvas = $("canvas");
-  var context = canvas.get(0).getContext("2d");
+  // Setup
+  var canvas = $("canvas"),
+      context = canvas.get(0).getContext("2d"),
+      canvasWidth = canvas.width(),
+      canvasHeight = canvas.height(),
+      backgroundImg = new Image(),
+      playerImg = new Image();
 
-  // Canvas dimensions
-  var x = canvas.width();
-  var y = canvas.height();
+  // Resources
+  backgroundImg.src = "../img/background.png",
+  playerImg.src = "../img/player.png";
 
   // Initialize game environment
   function init() {
+    
+    player();
 
   };
 
   init();
+
+ function player() {
+    $(playerImg).load(function() {
+      playerX = canvasWidth/2-playerImg.naturalWidth/2;
+      playerY = canvasHeight/2-playerImg.naturalHeight/2;
+      context.drawImage(playerImg,playerX,playerY);
+    })
+  }
+
+function background() {
+    
+    $(backgroundImg).load(function() {
+      context.drawImage(backgroundImg,0,0);
+    })
+}
 
   // var playerLatitude;
   // var playerLongitude;

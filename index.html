@@ -4,15 +4,24 @@
 <head>
 	<title>Pocket Friends</title>
 	<link href="css/main.css" rel="stylesheet" type="text/css">
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1">
 </head>
 
 <body>
 
-	<canvas id="gameCanvas" width="640" height="480">
-		Pocket Friends needs canvas to work!
-	</canvas>
+	<div id="wrapper">
+		<canvas width="640" height="480">
+			Pocket Friends needs canvas to work!
+		</canvas>
+
+		<div id="gameUI">
+				<h1>Pocket Friends</h1>
+		</div>
+	</div>
 
 </body>
+	<!-- Switch to Google content distribution network -->
+	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
 	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script src="js/basic.js"></script>
+	<script src="js/game.js"></script>
 </html>
