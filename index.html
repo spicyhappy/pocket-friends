@@ -2,10 +2,25 @@
 <html>
 <head>
 <title>Pocket Friends</title>
-<script src="js/test.js"></script>
+<script>
+var x=document.getElementById("demo");
+function getLocation()
+  {
+  if (navigator.geolocation)
+    {
+    navigator.geolocation.getCurrentPosition(showPosition);
+    }
+  else{x.innerHTML="Geolocation is not supported by this browser.";}
+  }
+function showPosition(position)
+  {
+  x.innerHTML="Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude; 
+  }
+</script>
 </head>
 <body>
 Geolocation:
-<span class="location"></span>
+<span id="demo"></span>
 </body>
 </html>
