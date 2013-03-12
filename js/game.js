@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 $(document).ready(function() {
 
 
@@ -22,7 +15,7 @@ $(document).ready(function() {
 
   // Initialize game environment
   function init() {
-    
+
     player();
 
   };
