@@ -11,10 +11,6 @@ $(document).ready(function() {
       debugLog = $("#debugLog");
 
   // Load resources
-  var backgroundImg = new Image();
-  backgroundImg.src = "img/background.png";
-  var playerImg = new Image();
-  playerImg.src = "img/player.png";
 
   // Functions
 
@@ -24,12 +20,61 @@ $(document).ready(function() {
     navigator.geolocation.getCurrentPosition(returnLocation);
   }
 
+// Asset Manager from http://www.html5rocks.com/en/tutorials/games/assetmanager/
+  
+    function AssetManager() {
+      this.successCount = 0;
+      this.errorCount = 0;
+      this.cache = {};
+      this.downloadQueue = [];
+    }
+
+    AssetManager.prototype.queueDownload = function(path) {
+      this.downloadQueue.push(path);
+    }
+
+    AssetManager.prototype.downloadAll = function(downloadCallback) {
+      if (this.downloadQueue.length === 0) {
+        downloadCallback();
+      }
+      for (var i = 0; i < this.downloadQueue.length; i++) {
+        var path = this.downloadQueue[i];
+        var img = new Image();
+        var that = this;
+
+      img.addEventListener("load", function() {
+          console.log(this.src + ' is loaded');
+          that.successCount += 1;
+          if (that.isDone()) {
+              downloadCallback();
+          }
+      }, false);
+
+      img.addEventListener("error", function() {
+          that.errorCount += 1;
+          if (that.isDone()) {
+              downloadCallback();
+          }
+      }, false);
+
+        img.src = path;
+        this.cache[path] = img;
+      }
+    }
+
+    AssetManager.prototype.isDone = function() {
+        return (this.downloadQueue.length == this.successCount + this.errorCount);
+    }
+
+    AssetManager.prototype.getAsset = function(path) {
+      return this.cache[path];
+    }
+
   function player() {
-    $(playerImg).load(function() {
-      playerX = canvasWidth/2-playerImg.naturalWidth/2;
-      playerY = canvasHeight/2-playerImg.naturalHeight/2;
-      context.drawImage(playerImg,playerX,playerY);
-    })
+    var playerImg = ASSET_MANAGER.getAsset("img/player.png");
+    playerX = canvasWidth/2-playerImg.naturalWidth/2;
+    playerY = canvasHeight/2-playerImg.naturalHeight/2;
+    context.drawImage(playerImg,playerX,playerY);
   }
 
   function geolocationTranslator(playerGeoX,playerGeoY) {
@@ -40,9 +85,8 @@ $(document).ready(function() {
   }
 
   function background() {
-    $(backgroundImg).load(function() {
-      context.drawImage(backgroundImg,0,0);
-    })
+    var backgroundImg = ASSET_MANAGER.getAsset("img/background.png");
+    context.drawImage(backgroundImg,0,0);
   }
 
   function detectGeolocation() {
@@ -62,8 +106,12 @@ $(document).ready(function() {
   }
 
   // Draw
+  var ASSET_MANAGER = new AssetManager();
+  ASSET_MANAGER.queueDownload('img/background.png');
+  ASSET_MANAGER.queueDownload('img/player.png');
 
-  // Initialize game
-  init();
+  ASSET_MANAGER.downloadAll(function() {
+    init();
+  });
 
 });
