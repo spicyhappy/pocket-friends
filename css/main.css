@@ -26,13 +26,15 @@ body {
 }
 
 html, body {
+	font-size: 10px;
+	letter-spacing: 1px;
 	height:100%;
 	font-family: 'Pokemon GB', sans-serif;
 	text-transform: uppercase;
 }
 
 #wrapper {
-	width: 640px;
+	width: 480px;
 	position: relative;
 	margin: 0 auto;
 	margin-top: 50px;
