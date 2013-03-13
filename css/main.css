@@ -53,3 +53,10 @@ html, body {
 	padding-top: 20px;
 	color: #000000;
 }
+
+@media (max-width:480px) {
+
+	#wrapper {
+		margin-top: 0;
+	}
+}
