@@ -5,7 +5,10 @@ $(document).ready(function() {
   var canvas = $("canvas"),
       context = canvas.get(0).getContext("2d"),
       canvasWidth = canvas.width(),
-      canvasHeight = canvas.height();
+      canvasHeight = canvas.height(),
+      geolocationRange1 = [42.39177,-71.16085],
+      geolocationRange2 = [42.30626, -71.02180],
+      debugLog = $("#debugLog");
 
   // Load resources
   var backgroundImg = new Image();
@@ -19,7 +22,7 @@ $(document).ready(function() {
     background();
     player();
     navigator.geolocation.getCurrentPosition(returnLocation);
-  };
+  }
 
   function player() {
     $(playerImg).load(function() {
@@ -27,6 +30,13 @@ $(document).ready(function() {
       playerY = canvasHeight/2-playerImg.naturalHeight/2;
       context.drawImage(playerImg,playerX,playerY);
     })
+  }
+
+  function geolocationTranslator(playerGeoX,playerGeoY) {
+
+    geoWidth = geolocation1[1]-geolocation2[1];
+    geoHeight = geolocation1[0]-geolocation2[0];
+
   }
 
   function background() {
@@ -46,9 +56,9 @@ $(document).ready(function() {
   }
 
   function returnLocation(position) {
-   latitude = position.coords.latitude;
-   longitude = position.coords.longitude;
-   context.fillText("Latitude: "+latitude+". Longitude: "+longitude, 20, 20);
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
+    debugLog.append("<br>Latitude: "+latitude+"<br>Longitude: "+longitude); 
   }
 
   // Draw
