@@ -1,35 +1,29 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<title>Pocket Friends</title>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=yes">
 	<link href="css/main.css" rel="stylesheet" type="text/css">
-	 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=yes">
+	<script type="text/javascript" src="lib/impact/impact.js"></script>
+	<script type="text/javascript" src="lib/game/main.js"></script>
 </head>
-
 <body>
-
-	<div id="wrapper">
-		<canvas width="480" height="320">
+<div id="wrapper">
+		<canvas id="canvas">
 			Pocket Friends needs canvas to work!
 		</canvas>
 
 		<div id="gameUI">
-				<h1>Pocket Friends</h1>
-		</div>
+				<!-- <h1>Pocket Friends</h1> -->
+				<span id="errorUI">&nbsp;</span>
+			</div>
+
 		<div id="debugLog">
 			<br>
 			Debugging
 			<p id="debugGeolocation"></p>
 		</div>
 	</div>
-
-
-	<!-- Switch to Google content distribution network -->
-	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script src="js/game.js"></script>
-	
 </body>
 </html>
