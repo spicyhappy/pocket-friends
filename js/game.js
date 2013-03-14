@@ -8,7 +8,7 @@ $(document).ready(function() {
       canvasHeight = canvas.height(),
       geolocationRange1 = [42.39177,-71.16085],
       geolocationRange2 = [42.30626, -71.02180],
-      debugLog = $("#debugLog");
+      debugGeolocation = $("#debugGeolocation");
 
   // Load resources
 
@@ -102,8 +102,14 @@ $(document).ready(function() {
   function returnLocation(position) {
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
-    debugLog.append("<br>Latitude: "+latitude+"<br>Longitude: "+longitude); 
+    debugGeolocation.html("<br>Latitude: "+latitude+"<br>Longitude: "+longitude); 
   }
+
+  function draw(){
+    navigator.geolocation.getCurrentPosition(returnLocation);
+  }
+
+  var refesh = setInterval(draw,200);
 
   // Draw
   var ASSET_MANAGER = new AssetManager();
