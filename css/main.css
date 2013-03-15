@@ -31,6 +31,7 @@ html, body {
 #gameUI h1{
 	padding-top: 20px;
 	color: white;
+	display: none;
 }
 
 #errorUI {
