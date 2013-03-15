@@ -1,4 +1,4 @@
-/** { margin: 0; padding: 0;}
+* { margin: 0; padding: 0;}
 html, body { height: 100%; width: 100%; }
 canvas { display: block; }
 
@@ -47,4 +47,4 @@ html, body {
 	#wrapper {
 		margin-top: 0;
 	}
-}*/
+}
