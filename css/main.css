@@ -27,7 +27,7 @@ html, body {
 	height: 480px;
 	text-align: center;
 	background-color: #000000;
-	/*display: none;*/
+	display: none;
 }
 
 #gameUI h1{
