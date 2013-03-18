@@ -51,6 +51,5 @@ html, body {
 @media (max-width:640px) {
 	#wrapper {
 		margin-top: 0;
-		width: 100%;
 	}
 }
