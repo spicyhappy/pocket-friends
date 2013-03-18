@@ -13,6 +13,11 @@ html, body {
 	height:100%;
 }
 
+#canvas {
+	width: 640px;
+	height: 480px;
+}
+
 #wrapper {
 	width: 640px;
 	position: relative;
