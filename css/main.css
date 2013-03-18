@@ -13,10 +13,7 @@ html, body {
 	height:100%;
 }
 
-#canvas {
-	width: 640px;
-	height: 480px;
-}
+#canvas {}
 
 #wrapper {
 	width: 640px;
