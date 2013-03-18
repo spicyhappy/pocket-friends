@@ -14,12 +14,12 @@ html, body {
 }
 
 #canvas {
-	width: 640px;
-	height: 960px;
+	width: 320px;
+	height: 480px;
 }
 
 #wrapper {
-	width: 640px;
+	width: 320px;
 	position: relative;
 	margin: 0 auto;
 	margin-top: 50px;
@@ -28,8 +28,8 @@ html, body {
 #gameUI {
 	position: absolute;
 	top: 0;
-	width: 640px;
-	height: 960px;
+	width: 320px;
+	height: 480px;
 	text-align: center;
 	background-color: #000000;
 	display: none;
