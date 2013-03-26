@@ -125,6 +125,17 @@ html, body {
 	background-color: black;
 }
 
+#battle-boxMessage {
+	position: absolute;
+	margin: 1.8%;
+	width: 96%;
+	height: 85%;
+	padding: 10px;
+	background-color: white;
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+	display: none;
+}
+
 #fightButton, #runButton {
 	border-radius: 0;
 	width: 46%;
@@ -138,17 +149,12 @@ html, body {
 	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
 
-#gameUI h1{
-	padding-top: 20px;
-	color: white;
-	display: none;
-}
-
 #battleUI {
 	background-color: white;
 	width: inherit;
 	height: inherit;
 }
+
 
 #errorUI {
 	margin-top: 34%;
