@@ -1,6 +1,6 @@
 * { margin: 0; padding: 0;}
 html, body { height: 100%; width: 100%; }
-canvas { display: block; }
+canvas, { display: block; }
 
 body {
 	background-color: #333;
@@ -27,51 +27,83 @@ html, body {
 	top: 0;
 	width: 100%;
 	height: 480px;
-	text-align: center;
 	background-color: #000000;
+	color: #000000;
 /*	display: none;*/
 }
 
 #battle-enemyUI {
-	height: 10%;
-	width: 60%;
+	width: 50%;
 	top: 0;
 	position: absolute;
-	background-color: red;
+	border-bottom-right-radius: 6px;
+	background-color: white;
+	border: 2px solid black;
+	border-top: 0;
+	border-left: 0;
+	padding: 6px 15px;
 }
 
-#battle-enemyUI:absolute {
-	width: 20px;
-	height: 10%;
-	background-color: orange;
+#battle-enemyUI div:first-of-type, #battle-playerUI div:first-of-type {
+	margin-bottom: 3px;
+}
+
+#enemy-hpWrapper, #player-hpWrapper {
+	height: 12px;
+	background-color: gray;
+	display: inline-block;
+	width: 80%;
+	position: relative;
+}
+
+#enemy-hp, #player-hp {
+	height: inherit;
+	width: 100%;
+	background-color: black;
 	position: absolute;
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+.text {
+	width: 20%;
+	float: right;
+	text-align: right;
+}
+
+#enemy-level, #player-level {
+	font-weight: bold;
 }
 
 #battle-enemyGraphics {
 	height: 150px;
 	width: 150px;
 	position: absolute;
-	right: 6%;
+	right: 5%;
 	top: 8%;
-	background-color: orange;
+	background: url('../media/monster-flower.png') no-repeat right bottom;
 }
 
 #battle-playerUI {
-	height: 10%;
-	width: 60%;
+	width: 50%;
 	bottom: 20%;
 	right: 0;
 	position: absolute;
-	background-color: aqua;
+	background-color: white;
+	border-top-left-radius: 6px;
+	border: 2px solid black;
+	border-right: 0;
+	border-bottom: 0;
+	padding: 6px;
+	padding-left: 15px;
 }
 
 #battle-playerGraphics {
 	height: 150px;
 	width: 150px;
 	bottom: 20%;
-	left: 6%;
+	left: 5%;
 	position: absolute;
-	background-color: navy;
+	background: url('../media/monster-puppy.png') no-repeat left bottom;
 }
 
 #battle-boxUI {
@@ -79,7 +111,17 @@ html, body {
 	width: 100%;
 	bottom: 0;
 	position: absolute;
-	background-color: blue;
+	background-color: gray;
+}
+
+#fightButton, #runButton {
+	width: 46%;
+	padding: 10px;
+	margin: 2%;
+	float: right;
+	height: 94%;
+	font-size: 16px;
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
 
 #gameUI h1{
@@ -100,6 +142,8 @@ html, body {
 	width: 100%;
 	font-size: 20px;
 	display: none;
+	text-align: center;
+	color: red;
 }
 
 @media (max-width:640px) {
