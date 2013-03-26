@@ -36,7 +36,11 @@ html, body {
 	height: 420px;
 	background-color: #000000;
 	color: #000000;
-/*	display: none;*/
+	display: none;
+}
+
+#battleUI {
+	display: none;
 }
 
 #battle-enemyUI {
@@ -118,7 +122,7 @@ html, body {
 	width: 100%;
 	bottom: 0;
 	position: absolute;
-	background-color: gray;
+	background-color: black;
 }
 
 #fightButton, #runButton {
@@ -126,7 +130,7 @@ html, body {
 	width: 46%;
 	padding: 10px;
 	margin: 1.8%;
-	float: right;
+	float: left;
 	height: 85%;
 	font-size: 20px;
 	background-color: white;
