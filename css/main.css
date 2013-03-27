@@ -38,7 +38,7 @@ html, body {
 	color: #000000;
 }
 
-#titleScreen {
+#titleScreenUI, #introScreenUI {
 	position: absolute;
 	top: 0;
 	width: 100%;
@@ -49,37 +49,61 @@ html, body {
 	text-align: center;
 }
 
-#titleScreen h1 {
+#titleScreenUI h1 {
 	font-size: 36px;
 	margin-top: 20%;
 
-	animation-delay: 1s;
-	-moz-animation-delay: 1s;
-	-webkit-animation-delay: 1s;
-	-ms-animation-delay: 1s;
-	-o-animation-delay: 1s;
+	animation-delay: 2s;
+	-moz-animation-delay: 2s;
+	-webkit-animation-delay: 2s;
+	-ms-animation-delay: 2s;
+	-o-animation-delay: 2s;
 }
 
-#titleScreen h2 {
+#titleScreenUI img {
+	margin-top: 20%;
+
+	animation-delay: 2.7s;
+	-moz-animation-delay: 2.7s;
+	-webkit-animation-delay: 2.7s;
+	-ms-animation-delay: 2.7s;
+	-o-animation-delay: 2.7s;
+}
+
+#titleScreenUI h2 {
 	font-size: 20px;
-	margin-top: 70%;
+	margin-top: 15%;
 	text-transform: lowercase;
 
-	animation-delay: 2s;
+	animation-delay: 4s;
 	animation-duration: 4s;
     animation-iteration-count: infinite;
-    -moz-animation-delay: 2s;
+    -moz-animation-delay: 4s;
     -moz-animation-duration: 4s;
     -moz-animation-iteration-count: infinite;
-    -webkit-animation-delay: 2s;
+    -webkit-animation-delay: 4s;
     -webkit-animation-duration: 4s;
     -webkit-animation-iteration-count: infinite;
-    -ms-animation-delay: 2s;
+    -ms-animation-delay: 4s;
     -ms-animation-duration: 4s;
     -ms-animation-iteration-count: infinite;
-    -o-animation-delay: 2s;
+    -o-animation-delay: 4s;
     -o-animation-duration: 4s;
     -o-animation-iteration-count: infinite;
+}
+
+#introScreenUI {
+	padding: 20px;
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+#introScreenUI h2 {
+	margin-top: 10%;
+	margin-bottom: 10%;
+}
+
+#introScreenUI p {
+	text-align: left;
 }
 
 #battleUI {
